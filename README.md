@@ -2,9 +2,16 @@
 
 ## PBEM/hotseat multiplayer for *Command: Modern Operations* scenarios
 
-FOR PLAYERS: [**DOWNLOAD LATEST SCENARIO PACK HERE (v1.55b2)**](https://github.com/musurca/IKE/releases/download/v1.55b2-scenarios/IKE_Scenario_Pack_v1.55b2.zip)
+This project is forked from the original IKE repository, with additional updates and fixes.
 
-FOR SCENARIO AUTHORS: [**DOWNLOAD LATEST RELEASE HERE (v1.55b2)**](https://github.com/musurca/IKE/releases/download/v1.55b2/IKE_v1.55b2.zip)
+**Important Note**:
+This project fixes plugin errors that have been present since **CMO version 1.07**.
+
+Please note that this project is still in an **experimental phase**, and its stability cannot be guaranteed.
+
+---
+
+FOR USERS: [**DOWNLOAD LATEST RELEASE HERE (v1.55b3)**](https://github.com/jdfsdy24/IKE/releases/download/v1.55b3/ike_min.lua)
 
 If you're a scenario author or player looking to convert a new or existing scenario for multiplayer use, you only need to download either the latest release or scenario pack using the links above. 
 
@@ -89,9 +96,13 @@ This will produce compiled but unminified Lua code in `debug/ike_debug.lua`. _Do
 
 ### How do I use it?
 
-For detailed instructions, please refer to the manual included with the [latest official release](https://github.com/musurca/IKE/releases/download/v1.55b2/IKE_v1.55b2.zip).
+To use this plugin, run it in the CMO Lua console with the [latest official release](https://github.com/jdfsdy24/IKE/releases/download/v1.55b3/ike_min.lua).
 
 ### VERSION HISTORY
+v1.55b3 (03/12/2025):
+
+* fixed: event creation failure
+* fixed: version number validation error
 
 v1.55b2 (1/26/2023):
 
