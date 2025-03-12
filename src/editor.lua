@@ -113,6 +113,8 @@ function Event_RemoveAction(evt, action)
 end
 
 function Trigger_Create(trig_name, args)
+    -- Del
+    pcall(Trigger_Delete, trig_name)
     args.name=trig_name
     args.mode="add"
     ScenEdit_SetTrigger(args)
@@ -138,8 +140,10 @@ function Condition_Delete(cond_name)
 end
 
 function Action_Create(action_name, args)
-    args.name=action_name
-    args.mode="add"
+    -- Del
+    pcall(Action_Delete, action_name)
+    args.name = action_name
+    args.mode = "add"
     ScenEdit_SetAction(args)
     return action_name
 end

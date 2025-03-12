@@ -82,7 +82,7 @@ function PBEM_CheckHostBuildNumber()
                 PBEM_GetHostBuildNumber()
             }
         ))
-        return false
+            return false
     elseif savebuild_verify > 0 then
         -- CMO build is newer than the save, update it
         PBEM_SetHostBuildNumber()
@@ -370,7 +370,17 @@ end
 ]]--
 function PBEM_GetBuildMajorMinor(buildnum_string)
     local cmo_version_major, cmo_version_minor
-
+    
+    -- Handle format like "v1.07 - Build 1567"
+    local v_format = string.match(buildnum_string, "v(%d+)%.(%d+)%s*-%s*Build%s*(%d+)")
+    if v_format then
+        local major_str, minor_str, build_str = string.match(buildnum_string, "v(%d+)%.(%d+)%s*-%s*Build%s*(%d+)")
+        cmo_version_major = tonumber(build_str)
+        cmo_version_minor = tonumber(minor_str) or 0
+        return cmo_version_major, cmo_version_minor
+    end
+    
+    -- Original code for handling format like "1307.1"
     local version_div_index = string.find(buildnum_string, "%.")
     if version_div_index then
         -- cut major and minor version integers, and remove non-numeric characters
